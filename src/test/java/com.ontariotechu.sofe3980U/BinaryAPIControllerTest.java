@@ -48,6 +48,8 @@ public class BinaryAPIControllerTest {
 			.andExpect(MockMvcResultMatchers.jsonPath("$.result").value(10001))
 			.andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("add"));
     }
+
+    // new implementation
     @Test
     public void andOperation() throws Exception {
         this.mvc.perform(get("/and").param("operand1", "1101").param("operand2", "1011"))
@@ -55,16 +57,12 @@ public class BinaryAPIControllerTest {
                 .andExpect(content().string("1001"));
     }
 
-
-
     @Test
     public void orOperation() throws Exception {
         this.mvc.perform(get("/or").param("operand1", "1101").param("operand2", "1011"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("1111"));
     }
-
-
 
     @Test
     public void multiplyOperation() throws Exception {

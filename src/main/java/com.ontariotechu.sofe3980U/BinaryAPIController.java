@@ -28,7 +28,7 @@ public class BinaryAPIController {
 	}
 
 
-
+// new implementation
 	@GetMapping("/and")
 	public String and(@RequestParam String operand1, @RequestParam String operand2) {
 		return Binary.and(new Binary(operand1), new Binary(operand2)).getValue();

@@ -30,6 +30,8 @@ public class BinaryController {
 			case "+":
 				model.addAttribute("result", Binary.add(number1,number2).getValue());
 				return "result";
+
+				// added case switch
 			case "*":
 				model.addAttribute("result", Binary.multiply(number1,number2).getValue());
 				return "result";
